@@ -1,6 +1,6 @@
 //App.jsx
 import { useState } from "react";
-import Counter from "./Counter";
+import Counter from "./components/Counter";
 
 //App component (functional component/ParentComponent)
 const App = ()=>{
