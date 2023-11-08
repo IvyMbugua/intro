@@ -1,13 +1,14 @@
-import {Link } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
 
 //UserList Component
 const UserList = ()=>{
-    //useFetch hook used to fetch users from API
-    const { data, loading } = useFetch("https://jsonplaceholder.typicode.com/users")
-    //if loading is true, display loading message
-    if(loading){
+    
+    const {data, loading} = useFetch(
+        "https://jsonplaceholder.typicode.com/users"
+    );
+
+    if (loading) {
         return <h1>Loading...</h1>
     }
 
@@ -15,11 +16,11 @@ const UserList = ()=>{
     return (
         <div>
             {
-                users.map((user) => {
+                data.map((user) => {
                     return (
                         <div key={user.id}>
-                           <h1>{user.name}</h1>
-                           <h2>{user.email}</h2>
+                           {/**Link component direct to dynamic path and pass in state */}
+                           <Link to = {`/users/${user.id}`} state = {user}>View User </Link>
                         </div>
                     )
                 })

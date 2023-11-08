@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 //react-router-dom imports
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import AboutComponent from '.components/User.jsx'
+import AboutComponent from './components/User.jsx'
 import User from './components/User.jsx'
 
 //Create browser router will be used to define the various paths in our application
